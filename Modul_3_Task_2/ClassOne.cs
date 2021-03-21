@@ -4,9 +4,18 @@ using System.Text;
 
 namespace Modul_3_Task_2
 {
-    class ClassOne
+    public class ClassOne
     {
-        public Action<bool> ShowHandler;
+        public event Action<bool> ShowHandler;
+
         public int Pow(int x, int y) => x * y;
+
+        public void PrintResult(bool value)
+        {
+            if (ShowHandler != null)
+            {
+                ShowHandler.Invoke(value);
+            }
+        }
     }
 }

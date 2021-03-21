@@ -2,14 +2,14 @@
 
 namespace Modul_3_Task_2
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var one = new ClassOne();
             var two = new ClassTwo();
-            one.ShowHandler = new Program().Show;
-            one.ShowHandler(two.Calc(one.Pow, 1, 2).Invoke(2));
+            one.ShowHandler += new Program().Show;
+            one.PrintResult(two.Calc(one.Pow, 1, 2).Invoke(2));
             Console.ReadKey();
         }
 
